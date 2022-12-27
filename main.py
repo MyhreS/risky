@@ -62,9 +62,13 @@ def battle_simulator(attacker, defender, num_battles):
 
 # Get input from user and run the battle simulator
 if __name__ == '__main__':
-    attacker = int(input("How many armies does the attacker have?: "))
-    defender = int(input("How many armies does the defender have?: "))
-    battle_simulator(attacker, defender, 1000)
+    while True:
+        attacker = int(input("Enter the number of armies for the attacker: "))
+        defender = int(input("Enter the number of armies for the defender: "))
+        battle_simulator(attacker, defender, 1000)
+        print()
+        if input("Do you want to run another simulation? (y/n): ") == 'n':
+            break
 
 
 
