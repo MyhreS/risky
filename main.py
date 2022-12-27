@@ -56,6 +56,7 @@ def battle_simulator(attacker, defender, num_battles):
 
     print("attacker = {} armies and defender = {} armies,\n"
           "the attacker won {}% of the time and the defender won {}% of the time in {} simulations.".format(
+        attacker, defender, round(percent_attacker_wins), round(percent_defender_wins), num_battles))
 
     return attacker_wins, defender_wins, percent_attacker_wins, percent_defender_wins
 
