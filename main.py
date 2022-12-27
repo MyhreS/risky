@@ -26,6 +26,16 @@ def find_loser(attacker, defender):
             attacker_loss += 1
     return attacker_loss, defender_loss
 
+def battle(attacker, defender):
+    while attacker > 0 and defender > 0:
+        attacker_loss, defender_loss = find_loser(attacker, defender)
+        attacker -= attacker_loss
+        defender -= defender_loss
+    if attacker > 0:
+        return 'attacker'
+    else:
+        return 'defender'
+
 
 
 

@@ -16,6 +16,10 @@ class TestMainFunctions(unittest.TestCase):
         attacker_loss, defender_loss = find_loser(3, 2)
         self.assertEqual(2, attacker_loss + defender_loss)
 
+    def test_battle(self):
+        winner = battle(3, 2)
+        self.assertTrue(winner in ['attacker', 'defender'])
+
 
 if __name__ == '__main__':
     unittest.main()
