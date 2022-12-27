@@ -55,6 +55,12 @@ def battle_simulator(attacker, defender, num_battles):
 
     return attacker_wins, defender_wins, percent_attacker_wins, percent_defender_wins
 
+# Get input from user and run the battle simulator
+if __name__ == '__main__':
+    attacker = int(input("How many armies does the attacker have?: "))
+    defender = int(input("How many armies does the defender have?: "))
+    battle_simulator(attacker, defender, 1000)
+
 
 
 
