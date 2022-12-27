@@ -36,6 +36,25 @@ def battle(attacker, defender):
     else:
         return 'defender'
 
+def battle_simulator(attacker, defender, num_battles):
+    attacker_wins = 0
+    defender_wins = 0
+    for i in range(num_battles):
+        winner = battle(attacker, defender)
+        if winner == 'attacker':
+            attacker_wins += 1
+        else:
+            defender_wins += 1
+
+    percent_attacker_wins = attacker_wins / num_battles * 100
+    percent_defender_wins = defender_wins / num_battles * 100
+
+    print("attacker = {} armies and defender = {} armies,\n"
+          "the attacker won {}% of the time and the defender won {}% of the time in {} simulations.".format(
+        attacker, defender, percent_attacker_wins, percent_defender_wins, num_battles))
+
+    return attacker_wins, defender_wins, percent_attacker_wins, percent_defender_wins
+
 
 
 

@@ -20,6 +20,10 @@ class TestMainFunctions(unittest.TestCase):
         winner = battle(3, 2)
         self.assertTrue(winner in ['attacker', 'defender'])
 
+    def test_battle_simulator(self):
+        attacker_wins, defender_wins, percent_attacker_wins, percent_defender_wins = battle_simulator(3, 2, 100)
+        self.assertEqual(100, attacker_wins + defender_wins)
+        self.assertEqual(100, percent_attacker_wins + percent_defender_wins)
 
 if __name__ == '__main__':
     unittest.main()
