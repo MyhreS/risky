@@ -6,11 +6,15 @@ def roll_dice():
 def roll_attacker_and_defender(attacker, defender):
     attacker_rolls = []
     for i in range(attacker):
+        if i >= 3:
+            break
         attacker_rolls.append(roll_dice())
     attacker_rolls.sort(reverse=True)
 
     defender_rolls = []
     for i in range(defender):
+        if i >= 2:
+            break
         defender_rolls.append(roll_dice())
     defender_rolls.sort(reverse=True)
     return attacker_rolls, defender_rolls
@@ -19,6 +23,7 @@ def find_loser(attacker, defender):
     attacker_rolls, defender_rolls = roll_attacker_and_defender(attacker, defender)
     attacker_loss = 0
     defender_loss = 0
+
     for attacker_roll, defender_roll in zip(attacker_rolls, defender_rolls):
         if attacker_roll > defender_roll:
             defender_loss += 1
@@ -51,7 +56,6 @@ def battle_simulator(attacker, defender, num_battles):
 
     print("attacker = {} armies and defender = {} armies,\n"
           "the attacker won {}% of the time and the defender won {}% of the time in {} simulations.".format(
-        attacker, defender, percent_attacker_wins, percent_defender_wins, num_battles))
 
     return attacker_wins, defender_wins, percent_attacker_wins, percent_defender_wins
 
