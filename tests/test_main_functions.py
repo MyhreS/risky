@@ -8,7 +8,7 @@ class TestMainFunctions(unittest.TestCase):
         self.assertTrue(dice_roll in range(1, 7))
 
     def test_roll_attacker_and_defender(self):
-        attacker, defender = roll_attacker_and_defender(3, 2)
+        attacker, defender = roll_attacker_and_defender(4, 3)
         self.assertEqual(3, len(attacker))
         self.assertEqual(2, len(defender))
 
